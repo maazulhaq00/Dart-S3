@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Output file",
+            "request": "launch",
+            "type": "dart",
+            "program": "output.dart",
+            "console": "terminal"
+        },
+        {
+            "name": "Run Variable file",
+            "request": "launch",
+            "type": "dart",
+            "program": "variable.dart",
+            "console": "terminal"
+        }
+    ]
+}
