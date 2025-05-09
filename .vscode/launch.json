@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run Output file",
+            "name": "Run Flutter & Dart",
             "request": "launch",
             "type": "dart",
-            "program": "output.dart",
+            "program": "main.dart",
             "console": "terminal"
         },
-        {
-            "name": "Run Variable file",
-            "request": "launch",
-            "type": "dart",
-            "program": "variable.dart",
-            "console": "terminal"
-        }
+        // {
+        //     "name": "Run Variable file",
+        //     "request": "launch",
+        //     "type": "dart",
+        //     "program": "variable.dart",
+        //     "console": "terminal"
+        // }
     ]
 }
