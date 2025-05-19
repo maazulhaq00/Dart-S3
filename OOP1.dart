@@ -1,26 +1,13 @@
-void learningOOPs() {
-  BankAccount ba1 = BankAccount("Ammar", 2233, 2000);
-  BankAccount ba2 = BankAccount("Khalid", 4456);
+void learningOOPs1() {
+  SavingAccount sa1 = SavingAccount("Khalid", 6789, 10, 3400);
 
-  // print(ba1.accountHolder);
-  // print(ba1.pin);
-  // print(ba1.balance);
+  sa1.checkBalance(6789);
+  sa1.addInterestAmount();
 
-  // print(ba2.accountHolder);
-  // print(ba2.pin);
-  // print(ba2.balance);
+  SavingAccount sa2 = SavingAccount("Ali Salman", 1234, 11, 4000);
 
-  ba1.checkBalance(1234);
-  
-  ba1.checkBalance(2233);
-
-  ba1.deposit(1234, 1000);
-  
-  ba1.deposit(2233, 1000);
-
-  ba1.withdraw(2233, 1200);
-
-  ba1.withdraw(2233, 2000);
+  sa2.checkBalance(1234);
+  sa2.addInterestAmount();
 }
 
 class BankAccount {
@@ -41,6 +28,7 @@ class BankAccount {
       print("Sorry, pin is incorrect");
     }
   }
+
   void deposit(int inputPin, int amount) {
     if (inputPin == this.pin) {
       // this.balance = this.balance + amount;
@@ -53,6 +41,7 @@ class BankAccount {
       print("Sorry, pin is incorrect");
     }
   }
+
   void withdraw(int inputPin, int amount) {
     if (inputPin == this.pin) {
       // this.balance = this.balance - amount;
@@ -63,14 +52,40 @@ class BankAccount {
           "Dear $accountHolder, amount withdrawn successfully. Your updated balance is Rs. $balance.",
         );
       } else {
-
         print(
           "Dear $accountHolder, you account balance is insufficient to make this transaction. Your current balance is Rs. $balance.",
         );
-
       }
     } else {
       print("Sorry, pin is incorrect");
     }
   }
+}
+
+class SavingAccount extends BankAccount {
+  var interestRate;
+
+  SavingAccount(
+    String accountHolder,
+    int pin,
+    double interestRate, [
+    int balance = 0
+  ]) : super(accountHolder, pin, balance) {
+    // this.accountHolder = accountHolder;
+    // this.pin = pin;
+    // this.balance = balance;
+
+    this.interestRate = interestRate;
+  }
+
+  void addInterestAmount() {
+    double interestAmount = balance * interestRate / 100;
+
+    balance += interestAmount;
+
+    print(
+      "Dear $accountHolder, interest amount Rs. $interestAmount creditted to your account. Your account balance is Rs. $balance.",
+    );
+  }
+
 }
